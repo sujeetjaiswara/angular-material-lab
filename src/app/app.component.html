@@ -1,1 +1,39 @@
-<router-outlet />
+<!-- <router-outlet /> -->
+
+<mat-toolbar>
+  <button mat-icon-button class="example-icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>My App</span>
+  <span class="example-spacer"></span>
+  <button mat-icon-button class="example-icon favorite-icon">
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon">
+    <mat-icon>share</mat-icon>
+  </button>
+</mat-toolbar>
+
+<div style="padding: 50px">
+  <mat-slide-toggle>Toggle me!</mat-slide-toggle>
+</div>
+
+<mat-form-field appearance="outline" floatLabel="always">
+  <mat-label>Input</mat-label>
+  <input matInput placeholder="Enter name" />
+</mat-form-field>
+
+<mat-form-field appearance="outline" floatLabel="always">
+  <mat-label>Select</mat-label>
+  <mat-select>
+    <mat-option value="one">First option</mat-option>
+    <mat-option value="two">Second option</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field appearance="outline" floatLabel="always">
+  <mat-label>Textarea</mat-label>
+  <textarea matInput></textarea>
+</mat-form-field>
+
+<button mat-stroked-button (click)="openSnackBar()">Pizza party</button>

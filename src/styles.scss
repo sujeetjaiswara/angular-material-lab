@@ -1,1 +1,87 @@
-/* You can add global styles to this file, and also import other style files */
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use "@angular/material" as mat;
+
+html {
+  @include mat.theme(
+    (
+      color: (
+        theme-type: light,
+        primary: mat.$azure-palette,
+        tertiary: mat.$blue-palette,
+      ),
+      typography: Roboto,
+      density: 0,
+    )
+  );
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+// Customize the entire app. Change :root to your selector if you want to scope the styles.
+:root {
+  @include mat.slide-toggle-overrides(
+    (
+      selected-icon-color: hotpink,
+      selected-track-color: #d32f2f,
+      track-height: 1.8rem,
+      selected-hover-handle-color: #000,
+      selected-hover-track-color: rgb(190, 13, 13),
+      selected-focus-track-color: rgb(253, 68, 68),
+    )
+  );
+
+  @include mat.form-field-overrides(
+    (
+      container-vertical-padding: 0.8rem,
+      filled-with-label-container-padding-top: 0,
+      filled-with-label-container-padding-bottom: 0,
+      outlined-focus-outline-width: 3px,
+      outlined-focus-outline-color: hotpink,
+      outlined-caret-color: hotpink,
+      outlined-outline-color: rgb(238, 7, 165),
+      outlined-hover-outline-color: orange,
+      outlined-label-text-color: rgb(238, 7, 165),
+      outlined-hover-label-text-color: orange,
+      outlined-input-text-color: hotpink,
+      select-option-text-color: hotpink,
+      outlined-input-text-placeholder-color: pink,
+    )
+  );
+
+  @include mat.snack-bar-overrides(
+    (
+      container-color: rgb(136, 18, 120),
+      supporting-text-color: #fff,
+      supporting-text-size: 1rem,
+      container-shape: 2rem,
+      button-color: #eee,
+    )
+  );
+
+  @include mat.select-overrides(
+    (
+      panel-background-color: #f3e5f5,
+      enabled-trigger-text-color: hotpink,
+      enabled-arrow-color: #d81b60,
+      focused-arrow-color: hotpink,
+    )
+  );
+
+  @include mat.toolbar-overrides(
+    (
+      container-background-color: #d32f2f,
+      container-text-color: #fff,
+      standard-height: 3.4rem,
+      title-text-size: 1.2rem,
+    )
+  );
+}
