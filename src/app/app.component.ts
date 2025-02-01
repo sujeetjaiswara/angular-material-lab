@@ -7,12 +7,15 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { RouterOutlet } from '@angular/router';
+// import { RouterOutlet } from '@angular/router';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatRadioModule } from '@angular/material/radio';
 
 @Component({
   selector: 'app-root',
   imports: [
-    RouterOutlet,
+    // RouterOutlet,
     MatSlideToggleModule,
     MatFormFieldModule,
     MatInputModule,
@@ -22,6 +25,9 @@ import { RouterOutlet } from '@angular/router';
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
+    MatCheckboxModule,
+    MatButtonToggleModule,
+    MatRadioModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
@@ -30,6 +36,10 @@ export class AppComponent {
   private _snackBar = inject(MatSnackBar);
 
   openSnackBar() {
-    this._snackBar.open('hello', 'close');
+    this._snackBar.open('Message successfully sent!', 'Dismiss', {
+      duration: 3000, // Optional: Auto close after 3 seconds
+      horizontalPosition: 'center', // Optional: Positioning
+      verticalPosition: 'bottom', // Optional: Positioning
+    });
   }
 }

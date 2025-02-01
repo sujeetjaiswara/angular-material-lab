@@ -1,10 +1,82 @@
-:host {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  // padding: 10px;
+@use "@angular/material" as mat;
+
+.app-toolbar {
+  @include mat.icon-button-overrides(
+    (
+      icon-color: #fff,
+    )
+  );
 }
 
-.example-spacer {
-  flex: 1 1 auto;
+mat-checkbox {
+  @include mat.checkbox-overrides(
+    (
+      selected-icon-color: #fdd835,
+      unselected-focus-icon-color: #fdd835,
+      selected-focus-icon-color: #fdd835,
+    )
+  );
+}
+
+.Check2 {
+  @include mat.checkbox-overrides(
+    (
+      selected-icon-color: #fb8c00,
+      unselected-focus-icon-color: #fb8c00,
+      selected-focus-icon-color: #fb8c00,
+    )
+  );
+}
+
+.Check3 {
+  @include mat.checkbox-overrides(
+    (
+      selected-icon-color: #8e24aa,
+      unselected-focus-icon-color: #8e24aa,
+      selected-focus-icon-color: #8e24aa,
+    )
+  );
+}
+
+.Check4 {
+  @include mat.checkbox-overrides(
+    (
+      selected-icon-color: #c0ca33,
+      unselected-focus-icon-color: #c0ca33,
+      selected-focus-icon-color: #c0ca33,
+    )
+  );
+}
+
+mat-button-toggle-group {
+  @include mat.button-toggle-overrides(
+    (
+      text-color: #fff,
+      background-color: #000,
+      selected-state-text-color: #fff,
+      selected-state-background-color: #7cb342,
+      divider-color: none,
+      height: 2rem,
+      shape: 6px,
+      label-text-size: 0.8rem,
+    )
+  );
+}
+
+.btn-submit {
+  @include mat.button-overrides(
+    (
+      filled-container-color: #d81b60,
+      filled-label-text-color: #fff,
+    )
+  );
+}
+
+.btn-radio {
+  @include mat.radio-overrides(
+    (
+      selected-icon-color: #ff9800,
+      selected-focus-icon-color: #ff9800,
+    )
+  );
 }

@@ -1,5 +1,6 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
+@use "tailwindcss";
 @use "@angular/material" as mat;
 
 html {
@@ -11,7 +12,7 @@ html {
         tertiary: mat.$blue-palette,
       ),
       typography: Roboto,
-      density: 0,
+      density: -1,
     )
   );
 }
@@ -30,12 +31,12 @@ body {
 :root {
   @include mat.slide-toggle-overrides(
     (
-      selected-icon-color: hotpink,
-      selected-track-color: #d32f2f,
+      // selected-icon-color: #fff,
+      selected-track-color: #43a047,
       track-height: 1.8rem,
-      selected-hover-handle-color: #000,
-      selected-hover-track-color: rgb(190, 13, 13),
-      selected-focus-track-color: rgb(253, 68, 68),
+      selected-hover-handle-color: #43a047,
+      selected-hover-track-color: #81c784,
+      selected-focus-track-color: #43a047
     )
   );
 
@@ -44,7 +45,7 @@ body {
       container-vertical-padding: 0.8rem,
       filled-with-label-container-padding-top: 0,
       filled-with-label-container-padding-bottom: 0,
-      outlined-focus-outline-width: 3px,
+      // outlined-focus-outline-width: 3px,
       outlined-focus-outline-color: hotpink,
       outlined-caret-color: hotpink,
       outlined-outline-color: rgb(238, 7, 165),
@@ -59,11 +60,11 @@ body {
 
   @include mat.snack-bar-overrides(
     (
-      container-color: rgb(136, 18, 120),
-      supporting-text-color: #fff,
-      supporting-text-size: 1rem,
+      container-color: #e8f5e9,
+      supporting-text-color: #2e7d32,
+      supporting-text-size: 0.8rem,
       container-shape: 2rem,
-      button-color: #eee,
+      button-color: #c62828,
     )
   );
 
@@ -84,4 +85,11 @@ body {
       title-text-size: 1.2rem,
     )
   );
+
+  // @include mat.button-overrides(
+  //   (
+  //     filled-container-color: #d32f2f,
+  //     filled-label-text-color: #fff,
+  //   )
+  // );
 }
