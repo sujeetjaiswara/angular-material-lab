@@ -8,15 +8,15 @@
   );
 }
 
-mat-checkbox {
-  @include mat.checkbox-overrides(
-    (
-      selected-icon-color: #fdd835,
-      unselected-focus-icon-color: #fdd835,
-      selected-focus-icon-color: #fdd835,
-    )
-  );
-}
+// mat-checkbox {
+//   @include mat.checkbox-overrides(
+//     (
+//       selected-icon-color: #fdd835,
+//       unselected-focus-icon-color: #fdd835,
+//       selected-focus-icon-color: #fdd835,
+//     )
+//   );
+// }
 
 .Check2 {
   @include mat.checkbox-overrides(
@@ -31,9 +31,9 @@ mat-checkbox {
 .Check3 {
   @include mat.checkbox-overrides(
     (
-      selected-icon-color: #8e24aa,
-      unselected-focus-icon-color: #8e24aa,
-      selected-focus-icon-color: #8e24aa,
+      selected-icon-color: #22cbe4,
+      unselected-focus-icon-color: #22cbe4,
+      selected-focus-icon-color: #22cbe4,
     )
   );
 }
@@ -51,32 +51,54 @@ mat-checkbox {
 mat-button-toggle-group {
   @include mat.button-toggle-overrides(
     (
-      text-color: #fff,
-      background-color: #000,
-      selected-state-text-color: #fff,
-      selected-state-background-color: #7cb342,
-      divider-color: none,
+      // text-color: #fff,
+      // background-color: #000,
+      // selected-state-text-color: #fff,
+      // selected-state-background-color: #7cb342,
+      // divider-color: none,
+      divider-color: #ccc,
       height: 2rem,
       shape: 6px,
-      label-text-size: 0.8rem,
+      label-text-size: 0.8rem
     )
   );
 }
 
-.btn-submit {
-  @include mat.button-overrides(
-    (
-      filled-container-color: #d81b60,
-      filled-label-text-color: #fff,
-    )
-  );
+// .btn-submit {
+//   @include mat.button-overrides(
+//     (
+//       filled-container-color: #d81b60,
+//       filled-label-text-color: #fff,
+//     )
+//   );
+// }
+
+// .btn-radio {
+//   @include mat.radio-overrides(
+//     (
+//       selected-icon-color: #ff9800,
+//       selected-focus-icon-color: #ff9800,
+//     )
+//   );
+// }
+
+/* enquiry-form.component.css */
+.enquiry-form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
-.btn-radio {
-  @include mat.radio-overrides(
-    (
-      selected-icon-color: #ff9800,
-      selected-focus-icon-color: #ff9800,
-    )
-  );
+.full-width {
+  width: 100%;
+}
+
+.example-card {
+  max-width: 400px;
+}
+
+.example-card-footer {
+  padding: 16px;
 }

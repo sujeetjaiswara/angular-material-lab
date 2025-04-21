@@ -1,20 +1,49 @@
-// Custom Theming for Angular Material
-// For more information: https://material.angular.io/guide/theming
-@use "tailwindcss";
 @use "@angular/material" as mat;
+@use "tailwindcss";
 
 html {
+  color-scheme: light;
   @include mat.theme(
     (
-      color: (
-        theme-type: light,
-        primary: mat.$azure-palette,
-        tertiary: mat.$blue-palette,
-      ),
-      typography: Roboto,
+      color: mat.$spring-green-palette,
+      // typography: Roboto,
+      typography: Inter,
       density: -1,
     )
   );
+
+  .example-orange-primary-container {
+    @include mat.theme-overrides(
+      (
+        primary-container: #84ffff,
+      )
+    );
+  }
+
+  .example-bright-container {
+    @include mat.theme(
+      (
+        color: mat.$cyan-palette,
+      )
+    );
+  }
+
+  @include mat.card-overrides(
+    (
+      elevated-container-color: var(--mat-sys-primary),
+      subtitle-text-color: var(-mat-sys-surface),
+      // elevated-container-color: #f8def5,
+      // subtitle-text-color: #fff,
+      elevated-container-shape: 0.5rem,
+      title-text-size: 1.5rem,
+      title-text-line-height: 2.8rem,
+      subtitle-text-size: 12rem,
+    )
+  );
+}
+
+body.dark-mode {
+  color-scheme: dark;
 }
 
 html,
@@ -24,63 +53,64 @@ body {
 
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  // font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: "Inter", sans-serif;
+  background: var(--mat-sys-surface);
+  color: var(--mat-sys-on-surface);
 }
 
 // Customize the entire app. Change :root to your selector if you want to scope the styles.
 :root {
-  @include mat.slide-toggle-overrides(
-    (
-      // selected-icon-color: #fff,
-      selected-track-color: #43a047,
-      track-height: 1.8rem,
-      selected-hover-handle-color: #43a047,
-      selected-hover-track-color: #81c784,
-      selected-focus-track-color: #43a047
-    )
-  );
+  // @include mat.slide-toggle-overrides(
+  //   (
+  //     selected-track-color: #43a047,
+  //     track-height: 1.8rem,
+  //     selected-hover-handle-color: #43a047,
+  //     selected-hover-track-color: #81c784,
+  //     selected-focus-track-color: #43a047,
+  //   )
+  // );
 
-  @include mat.form-field-overrides(
-    (
-      container-vertical-padding: 0.8rem,
-      filled-with-label-container-padding-top: 0,
-      filled-with-label-container-padding-bottom: 0,
-      // outlined-focus-outline-width: 3px,
-      outlined-focus-outline-color: hotpink,
-      outlined-caret-color: hotpink,
-      outlined-outline-color: rgb(238, 7, 165),
-      outlined-hover-outline-color: orange,
-      outlined-label-text-color: rgb(238, 7, 165),
-      outlined-hover-label-text-color: orange,
-      outlined-input-text-color: hotpink,
-      select-option-text-color: hotpink,
-      outlined-input-text-placeholder-color: pink,
-    )
-  );
+  // @include mat.form-field-overrides(
+  //   (
+  //     container-vertical-padding: 0.8rem,
+  //     filled-with-label-container-padding-top: 0,
+  //     filled-with-label-container-padding-bottom: 0,
+  //     outlined-focus-outline-color: hotpink,
+  //     outlined-caret-color: hotpink,
+  //     outlined-outline-color: rgb(238, 7, 165),
+  //     outlined-hover-outline-color: orange,
+  //     outlined-label-text-color: rgb(238, 7, 165),
+  //     outlined-hover-label-text-color: orange,
+  //     outlined-input-text-color: hotpink,
+  //     select-option-text-color: hotpink,
+  //     outlined-input-text-placeholder-color: pink,
+  //   )
+  // );
 
-  @include mat.snack-bar-overrides(
-    (
-      container-color: #e8f5e9,
-      supporting-text-color: #2e7d32,
-      supporting-text-size: 0.8rem,
-      container-shape: 2rem,
-      button-color: #c62828,
-    )
-  );
+  // @include mat.snack-bar-overrides(
+  //   (
+  //     container-color: #e8f5e9,
+  //     supporting-text-color: #2e7d32,
+  //     supporting-text-size: 0.8rem,
+  //     container-shape: 2rem,
+  //     button-color: #c62828,
+  //   )
+  // );
 
-  @include mat.select-overrides(
-    (
-      panel-background-color: #f3e5f5,
-      enabled-trigger-text-color: hotpink,
-      enabled-arrow-color: #d81b60,
-      focused-arrow-color: hotpink,
-    )
-  );
+  // @include mat.select-overrides(
+  //   (
+  //     panel-background-color: #f3e5f5,
+  //     enabled-trigger-text-color: hotpink,
+  //     enabled-arrow-color: #d81b60,
+  //     focused-arrow-color: hotpink,
+  //   )
+  // );
 
   @include mat.toolbar-overrides(
     (
-      container-background-color: #d32f2f,
-      container-text-color: #fff,
+      container-background-color: var(--mat-sys-primary),
+      container-text-color: var(--mat-sys-surface),
       standard-height: 3.4rem,
       title-text-size: 1.2rem,
     )
@@ -92,4 +122,23 @@ body {
   //     filled-label-text-color: #fff,
   //   )
   // );
+
+  @include mat.form-field-overrides(
+    (
+      // filled-caret-color: #620c5d,
+      // filled-focus-active-indicator-color: #620c5d,
+      // filled-container-color: #f3e5f5,
+      // filled-active-indicator-color: #620c5d,
+      filled-with-label-container-padding-top: 0.8rem,
+      filled-with-label-container-padding-bottom: 0rem,
+      container-height: 2.8rem
+    )
+  );
+}
+
+:host {
+  background: var(--mat-sys-primary-container);
+  color: var(--mat-sys-on-primary-container);
+  border: 1px solid var(--mat-sys-outline-variant);
+  font: var(--mat-sys-body-large);
 }

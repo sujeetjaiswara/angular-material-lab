@@ -14,56 +14,97 @@
   </button>
 </mat-toolbar>
 
-<div class="container mx-auto py-6">
-  <div class="mb-4">
-    <mat-slide-toggle>Toggle me!</mat-slide-toggle>
+<div class="container">
+  <div class="w-11/12 py-6 mx-auto">
+    <form
+      [formGroup]="enquiryForm"
+      (ngSubmit)="onSubmit()"
+      class="enquiry-form"
+    >
+      <h4 class="font-medium text-2xl mb-2">Enquiry</h4>
+
+      <mat-form-field appearance="fill" floatLabel="auto" class="full-width">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" floatLabel="auto" class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" type="email" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" floatLabel="auto" class="full-width">
+        <mat-label>Phone</mat-label>
+        <input matInput formControlName="phone" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" floatLabel="auto" class="full-width">
+        <mat-label>Enquiry Type</mat-label>
+        <mat-select formControlName="enquiryType" [multiple]="false">
+          @for (type of enquiryTypes; track $index) {
+          <mat-option [value]="type">
+            {{ type }}
+          </mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" floatLabel="auto" class="full-width">
+        <mat-label>Message</mat-label>
+        <textarea matInput formControlName="message" rows="4"></textarea>
+      </mat-form-field>
+
+      <div class="flex justify-end w-full">
+        <button mat-flat-button type="submit">Submit</button>
+      </div>
+    </form>
   </div>
 
-  <div class="mb-4 flex flex-col item-center justify-center">
-    <mat-checkbox class="Check1" checked>Check 1</mat-checkbox>
-    <mat-checkbox class="Check2" checked>Check 2</mat-checkbox>
-    <mat-checkbox class="Check3" checked>Check 3</mat-checkbox>
-    <mat-checkbox class="Check4" checked>Check 4</mat-checkbox>
-  </div>
+  <div
+    class="flex flex-col gap-4 w-6/12 p-6 mb-6 mx-auto border border-gray-300 rounded-lg shadow-md"
+  >
+    <div>
+      <mat-slide-toggle>Toggle me!</mat-slide-toggle>
+    </div>
 
-  <div class="mb-4 flex flex-col item-center justify-center">
-    <mat-radio-group class="btn-radio">
-      <mat-radio-button value="1">Option 1</mat-radio-button>
-      <mat-radio-button value="2">Option 2</mat-radio-button>
-    </mat-radio-group>
-  </div>
+    <div class="flex flex-col item-center justify-center">
+      <mat-checkbox class="Check1" checked>Check 1</mat-checkbox>
+      <mat-checkbox class="Check2" checked>Check 2</mat-checkbox>
+      <mat-checkbox class="Check3" checked>Check 3</mat-checkbox>
+      <mat-checkbox class="Check4" checked>Check 4</mat-checkbox>
+    </div>
 
-  <div class="mb-6">
-    <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
-      <mat-button-toggle value="bold">Bold</mat-button-toggle>
-      <mat-button-toggle value="italic">Italic</mat-button-toggle>
-      <mat-button-toggle value="underline">Underline</mat-button-toggle>
-    </mat-button-toggle-group>
-  </div>
+    <div class="flex flex-col item-center justify-center">
+      <mat-radio-group class="btn-radio">
+        <mat-radio-button value="1">Option 1</mat-radio-button>
+        <mat-radio-button value="2">Option 2</mat-radio-button>
+      </mat-radio-group>
+    </div>
 
-  <div class="flex flex-col w-6/12">
-    <mat-form-field appearance="outline" floatLabel="always">
-      <mat-label>Name</mat-label>
-      <input matInput />
-    </mat-form-field>
+    <div>
+      <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+        <mat-button-toggle value="bold">Bold</mat-button-toggle>
+        <mat-button-toggle value="italic">Italic</mat-button-toggle>
+        <mat-button-toggle value="underline">Underline</mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
 
-    <mat-form-field appearance="outline" floatLabel="always">
-      <mat-label>Gender</mat-label>
-      <mat-select>
-        <mat-option value="m">Male</mat-option>
-        <mat-option value="f">Female</mat-option>
-      </mat-select>
-    </mat-form-field>
-
-    <mat-form-field appearance="outline" floatLabel="always">
-      <mat-label>Message</mat-label>
-      <textarea matInput></textarea>
-    </mat-form-field>
-
-    <div class="flex justify-end w-full">
-      <button class="btn-submit" mat-flat-button (click)="openSnackBar()">
-        Submit
-      </button>
+    <div>
+      <mat-card class="example-card" appearance="raised">
+        <mat-card-header>
+          <mat-card-title>Chihuahua</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ longText }}</p>
+        </mat-card-content>
+        <mat-card-footer class="example-card-footer">
+          <mat-chip-set aria-label="Chihuahua traits">
+            <mat-chip>charming</mat-chip>
+            <mat-chip>graceful</mat-chip>
+            <mat-chip>sassy</mat-chip>
+          </mat-chip-set>
+        </mat-card-footer>
+      </mat-card>
     </div>
   </div>
 </div>
